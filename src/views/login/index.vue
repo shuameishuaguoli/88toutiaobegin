@@ -15,7 +15,7 @@ export default {
     background-image: url('../../assets/img/login_bg.jpg');
     // 高度是当前屏幕的百分百
     height: 100vh;
-    // 铺满屏幕
+    // 铺满屏幕是cover
     background-size: cover;
   }
 </style>
