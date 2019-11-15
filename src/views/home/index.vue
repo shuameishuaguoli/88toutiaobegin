@@ -79,7 +79,7 @@
                       <a href="https://github.com/shuameishuaguoli">git地址</a>
                     </el-dropdown-item>
                     <!-- @click="onGitout" -->
-                    <el-dropdown-item >退出</el-dropdown-item>
+                    <el-dropdown-item @click.native="onGitout">退出</el-dropdown-item>
                   </el-dropdown-menu>
                 </el-dropdown>
             </div>
@@ -93,13 +93,12 @@
 export default {
   methods: {
     // 点击突出按钮的时候需要跳转页面，并将本地的token值进行删除
-    // onGitout () {
-    //   // 跳转到登录页
-    //   this.$router.replace('/login')
-    //   // 将本地的token值进行删除
-    //   window.localStorage.removeItem('token')
-    //   alert('你个王日天')
-    // },
+    onGitout () {
+      // 跳转到登录页
+      this.$router.push('/login')
+      // 将本地的token值进行删除
+      window.localStorage.removeItem('token')
+    },
     // 警告框
     warning () {
       this.$notify({
