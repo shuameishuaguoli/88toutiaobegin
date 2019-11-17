@@ -93,7 +93,7 @@ export default {
             // 将获取到的token值保存到本地
             window.localStorage.setItem('token', res.data.data.token)
             // 将token值保存到本地之后，最后需要跳转到首页
-            this.$router.push('/home')
+            this.$router.push('/Layout')
             // 登录失败的时候使用catch来接收一下
           }).catch(() => {
             // 如果手机号或密码出错了，也要给用户一个友好的提示
