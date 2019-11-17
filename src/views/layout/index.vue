@@ -16,7 +16,7 @@
           style="width:201px"
           router
         >
-          <el-menu-item item index="/homepage" style="">首页</el-menu-item>
+          <el-menu-item item index="/Layout" style="">首页</el-menu-item>
           <el-submenu index="2">
             <template slot="title">
                 内容管理

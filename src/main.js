@@ -11,6 +11,8 @@ import 'element-ui/lib/theme-chalk/index.css'
 import './style/index.less'
 // 引入axios
 import axios from 'axios'
+// 引入nprogress插件的样式，包是在router下的index.js引入的
+import 'nprogress/nprogress.css'
 // axios挂载到Vue的prototype中  给全局的Vue变量都挂载了axios，这样在其他组件中使用axios的时候就可以直接用就行了
 Vue.prototype.$axios = axios
 // 设置一下url的常态地址
