@@ -238,6 +238,8 @@ export default {
     },
     // 点击页码的时候触发这个方法，page是current-change事件中的一个默认值
     onpageChange (page) {
+      // 在这里记录一下当前的这个页码，在这里记录这个当前页码的作用是，当我删掉当前页面的一条数据的时候，我需要重新获取一下当前页的文章信息，保存这个页码就是这个作用的
+      this.page = page
       console.log(page)
       // 我点击了页码的时候需要调用一下获取文章列表的方法
       this.getAllarticle(page)
@@ -263,6 +265,8 @@ export default {
           }
         }).then(res => {
           console.log(res)
+          // 文章信息删除成功之后，需要重新加载一下当前页面的文章列表
+          this.getAllarticle(this.page)
           this.$message({
             type: 'success',
             message: '删除成功!'
