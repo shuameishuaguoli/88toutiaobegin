@@ -24,7 +24,8 @@ const routes = [
     // 配置二级路由表
     children: [
       {
-        path: '/homepage',
+        // 二级路由中路径中什么都不写的话，就是默认显示的页面
+        path: '',
         component: Homepage
       }, {
         path: '/content',
