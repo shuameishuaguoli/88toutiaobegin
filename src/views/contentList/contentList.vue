@@ -101,12 +101,14 @@
       <el-table-column
         label="操作">
         <!-- 编辑按钮 -->
-        <el-button type="success">
-          编辑
-        </el-button>
-        <el-button type="danger">
-          删除
-        </el-button>
+        <template slot-scope="scope">
+          <el-button type="success">
+            编辑
+          </el-button>
+          <el-button type="danger" @click="onDelete(scope.row.id)">
+            删除
+          </el-button>
+        </template>
       </el-table-column>
     </el-table>
 
@@ -239,6 +241,26 @@ export default {
       console.log(page)
       // 我点击了页码的时候需要调用一下获取文章列表的方法
       this.getAllarticle(page)
+    },
+    // 点击删除按钮触发的方法
+    onDelete (articleID) {
+      console.log('ID是' + articleID)
+      const token = window.localStorage.getItem('token')
+      // ID获取到了，发送请求就OK啦
+      this.$axios({
+        // 请求地址
+        url: `/articles/${articleID}`,
+        // 请求方式
+        method: 'DELETE',
+        // 在请求请求头中携带token
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      }).then(res => {
+        console.log(res)
+      }).catch(erro => {
+        console.log(erro, '删除貌似失败了')
+      })
     }
   },
   // 组件加载区
