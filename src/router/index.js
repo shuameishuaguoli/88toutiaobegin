@@ -10,6 +10,8 @@ import Article from '../views/article/publishArticle.vue'
 import Content from '../views/contentList/contentList.vue'
 // 引入首页
 import Homepage from '../views/home/'
+// 引入评论页面
+import comment from '../views/comment/'
 // 引入进度条的包
 import Nprogress from 'nprogress'
 Vue.use(VueRouter)
@@ -35,6 +37,9 @@ const routes = [
       }, {
         path: '/article',
         component: Article
+      }, {
+        path: '/comment',
+        component: comment
       }
     ]
   }
